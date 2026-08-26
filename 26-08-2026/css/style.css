@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+    background-color: black;
+}
+
+header {
+    background-color: greenyellow;
+}
+
+nav {
+    background-color: yellow;
+}
+
+main {
+    background-color: greenyellow;
+}
+
+section {
+    background-color: cyan;
+}
+
+article {
+    background-color: pink;
+}
+
+aside {
+    background-color: rgb(255, 192, 255);
+}
+
+footer {
+    background-color: hotpink;
+}
