@@ -1,33 +1,67 @@
 @charset "UTF-8";
 
 body {
-    background-color: black;
+    background-color: rebeccapurple; /* Cor de Fundo */
 }
 
 header {
-    background-color: greenyellow;
+    background-color: greenyellow; /* Cor de Fundo */
+    width: 75%; /* Largura */
+    height: 200px; /* Altura*/
+    margin-bottom: 20px; /* Margem Externa Inferior */
+    display: flex; /* Modelo de layout flexbox */
+    flex-direction: column; /* Organiza os itens flex em coluna */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-bottom: 20px; /* Margem Externa Inferior */
 }
 
 nav {
-    background-color: yellow;
+    background-color: yellow; /* Cor de Fundo */
+    width: 90%; /* Largura */
+    height: 80px; /* Altura */
+    margin: 0 auto;
+    margin-top: auto; /* Empurra o elemento para o final do container flex */
+    margin-top: 60px; /* Margem Externa Superior */
 }
 
 main {
-    background-color: greenyellow;
+    background-color: greenyellow; /* Cor de Fundo */
+    width: 72%; /* Largura */
+    height: 400px; /* Altura*/
+    margin-bottom: 20px; /* Margem Externa Inferior */
+    padding: 20px; /*Margem Interna dos quatro lados*/
+    margin: 0 auto; /* Centraliza horizontalmente */
 }
 
 section {
-    background-color: cyan;
+    background-color: cyan; /* Cor de Fundo */
+    width: 60%; /* Largura */
+    height: 360px; /* Altura */
+    padding: 20px; /*Margem Interna dos quatro lados*/
+    float: left; /* Alinha o elemento flutuando à esquerda */
+    margin-right: 14px; /* Margem Externa Direita */
 }
 
 article {
-    background-color: pink;
+    background-color: rgb(255, 192, 255); /* Cor de Fundo */
+    width: 100%; /* Largura */
+    height: 45%; /* Altura */
+    margin-bottom: 30px; /* Margem Externa Inferior */
 }
 
 aside {
-    background-color: rgb(255, 192, 255);
+    background-color: rgb(255, 192, 255); /* Cor de Fundo */
+    width: 30%; /* Largura */
+    height: 400px; /* Altura */
+    float: left; /* Alinha o elemento flutuando à esquerda */
+    margin-left: 20px; /* Margem Externa Esquerda */
 }
 
 footer {
-    background-color: hotpink;
+    background-color: hotpink; /* Cor de Fundo */
+    width: 75%; /* Largura */
+    height: 100px; /* Altura*/
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-bottom: 20px; /* Margem Externa Inferior */
+    margin-top: 20px; /* Margem Externa Superior */
 }
