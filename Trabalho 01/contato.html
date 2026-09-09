@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Página Viva — Contato</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Entre em contato conosco</h1>
+        <p>Estamos por perto, na Rua das Letras</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="produtos.html">LIVROS</a></li>
+            <li><a href="sobre.html">SOBRE</a></li>
+            <li><a href="eventos.html">EVENTOS</a></li>
+            <li><a href="contato.html">CONTATO</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="informacoes">
+            <h2>Onde estamos</h2>
+            <div id="contato-grade">
+                <img src="image/contato-fachada.jpg" alt="Fachada da livraria Página Viva">
+                <div>
+                    <address>
+                        Rua das Letras, 128 — Vila Madalena<br>
+                        São Paulo/SP — CEP 05435-000<br>
+                        Telefone: (11) 3456-7890<br>
+                        E-mail: <a href="mailto:contato@paginaviva.com.br">contato@paginaviva.com.br</a>
+                    </address>
+                    <p>
+                        <strong>Horário de funcionamento:</strong><br>
+                        Terça a sexta, das 10h às 20h<br>
+                        Sábados, das 9h às 19h<br>
+                        Domingos, das 10h às 15h<br>
+                        Segunda-feira: fechado
+                    </p>
+                    <p>
+                        Redes sociais:
+                        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> ·
+                        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fale-conosco">
+            <h2>Envie uma mensagem</h2>
+            <form id="formulario-contato">
+                <label>
+                    Nome
+                    <input type="text" name="nome" required>
+                </label>
+                <label>
+                    E-mail
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Assunto
+                    <input type="text" name="assunto" placeholder="Encomenda, evento, dúvida...">
+                </label>
+                <label>
+                    Mensagem
+                    <textarea name="mensagem" rows="5" required></textarea>
+                </label>
+                <button type="submit">Enviar mensagem</button>
+                <p id="aviso-envio" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Livraria Página Viva — Rua das Letras, 128, São Paulo/SP</p>
+        <p>Terça a domingo · consulte os horários acima</p>
+    </footer>
+</body>
+</html>

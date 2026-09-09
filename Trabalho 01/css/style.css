@@ -1,0 +1,382 @@
+@charset "UTF-8";
+
+:root {
+    --papel: #f2ecdd;
+    --papel-escuro: #e6ddc6;
+    --tinta: #2b2318;
+    --tinta-suave: #5a5142;
+    --verde: #3f5b45;
+    --verde-escuro: #2c4032;
+    --dourado: #c89b3c;
+    --ferrugem: #964e2f;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+    --largura-conteudo: 1080px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--papel);
+    background-image: url(../image/fundo.jpg);
+    background-repeat: repeat;
+    font-family: var(--sans);
+    color: var(--tinta);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: var(--serif);
+    line-height: 1.15;
+    margin: 0 0 0.5em 0;
+}
+
+p {
+    line-height: 1.6;
+    color: var(--tinta-suave);
+}
+
+a {
+    color: var(--verde-escuro);
+}
+
+/* ---------- header ---------- */
+
+header {
+    background-color: var(--verde);
+    color: var(--papel);
+    padding: 1.6rem 1.5rem;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 0.3rem;
+}
+
+header h1 {
+    color: var(--papel);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    letter-spacing: 0.01em;
+}
+
+header p {
+    color: var(--papel-escuro);
+    margin: 0;
+    font-style: italic;
+}
+
+/* ---------- nav ---------- */
+
+nav {
+    background-color: var(--tinta);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: var(--largura-conteudo);
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 1rem 1.4rem;
+    color: var(--papel);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    border-bottom-color: var(--dourado);
+    color: var(--dourado);
+}
+
+/* ---------- main ---------- */
+
+main {
+    max-width: var(--largura-conteudo);
+    margin-inline: auto;
+    width: 100%;
+    padding: 2.5rem 1.5rem 3.5rem;
+    display: grid;
+    gap: 3rem;
+}
+
+section {
+    display: grid;
+    gap: 1.2rem;
+}
+
+section > h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    border-bottom: 2px solid var(--verde);
+    padding-bottom: 0.4rem;
+}
+
+article {
+    background-color: rgba(255, 255, 255, 0.35);
+    border: 1px solid var(--papel-escuro);
+    padding: 1.2rem;
+}
+
+aside {
+    background-color: var(--verde-escuro);
+    color: var(--papel);
+    padding: 1.4rem;
+    border-left: 6px solid var(--dourado);
+}
+
+aside h2, aside h3 {
+    color: var(--papel);
+}
+
+aside p {
+    color: var(--papel-escuro);
+}
+
+time {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: var(--ferrugem);
+    text-transform: uppercase;
+}
+
+address {
+    font-style: normal;
+    line-height: 1.7;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+    background-color: var(--tinta);
+    color: var(--papel-escuro);
+    padding: 1.6rem 1.5rem;
+    text-align: center;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: var(--dourado);
+    text-decoration: none;
+}
+
+/* ==== index.html — página inicial ====*/
+
+#hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+#hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid var(--tinta);
+}
+
+#hero-texto {
+    display: grid;
+    gap: 0.9rem;
+    align-content: center;
+}
+
+#destaques-grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+#depoimento {
+    justify-self: stretch;
+}
+
+@media (max-width: 720px) {
+    #hero {
+        grid-template-columns: 1fr;
+    }
+    #destaques-grade {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==== produtos.html — catálogo ==== */
+
+#grade-livros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+#grade-livros article {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.6rem;
+    padding: 0.8rem;
+}
+
+#grade-livros img {
+    aspect-ratio: 5 / 7;
+    object-fit: cover;
+}
+
+#grade-livros p:last-child {
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--ferrugem);
+    font-size: 1.1rem;
+}
+
+/* ==== sobre.html ==== */
+
+#historia {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+#historia img {
+    border: 1px solid var(--tinta);
+}
+
+#numeros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+#numeros strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--dourado);
+}
+
+#equipe-grade {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 720px) {
+    #historia {
+        grid-template-columns: 1fr;
+    }
+    #numeros {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==== eventos.html ==== */
+
+#lista-eventos {
+    display: grid;
+    gap: 1.5rem;
+}
+
+#lista-eventos article {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.2rem;
+}
+
+#lista-eventos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 720px) {
+    #lista-eventos article {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==== contato.html ==== */
+
+#contato-grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+#contato-grade img {
+    border: 1px solid var(--tinta);
+}
+
+form {
+    display: grid;
+    gap: 0.9rem;
+}
+
+label {
+    display: grid;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--tinta-suave);
+}
+
+input, textarea {
+    font-family: var(--sans);
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--tinta-suave);
+    background-color: var(--papel);
+    color: var(--tinta);
+}
+
+button {
+    justify-self: start;
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.6rem;
+    background-color: var(--verde);
+    color: var(--papel);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--verde-escuro);
+}
+
+@media (max-width: 720px) {
+    #contato-grade {
+        grid-template-columns: 1fr;
+    }
+}
