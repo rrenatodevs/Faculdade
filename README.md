@@ -9,10 +9,15 @@ O repositório está organizado por data das atividades e por tipo de entrega:
 Faculdade
 
 ├── 19-08-2026      # Atividades da aula/entrega do dia 19/08
+
 ├── 26-08-2026      # Atividades da aula/entrega do dia 26/08
+
 ├── 02-09-2026      # Atividades da aula/entrega do dia 02/09
+
 ├── Praticando       # Exercícios de prática e estudos livres
+
 ├── Trabalho 01      # Trabalho 01 (arquivos-fonte)
+
 └── Trabalho 01.7z     # Trabalho 01 compactado (versão para entrega)
 
 💡 As pastas com datas seguem o padrão DD-MM-AAAA e reúnem o material referente àquela aula ou prazo de entrega.
