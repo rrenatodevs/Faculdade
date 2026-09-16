@@ -6,6 +6,7 @@ Repositório com as atividades, exercícios e trabalhos desenvolvidos durante o 
 
 O repositório está organizado por data das atividades e por tipo de entrega:
 
+
 Faculdade/
 ├── 19-08-2026/       # Atividades da aula/entrega do dia 19/08
 ├── 26-08-2026/       # Atividades da aula/entrega do dia 26/08
