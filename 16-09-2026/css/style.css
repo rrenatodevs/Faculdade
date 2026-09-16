@@ -1,0 +1,152 @@
+@charset 'UTF-8';
+/* CSS Document */
+
+body {
+    background-color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li:hover .submenu {
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #555;
+    color: #ff8800;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    clear: both;
+    text-align: center;
+    font-size: small;
+}
+
+.search {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 70%;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    list-style-type: none;
+    z-index: 1;
+    margin-top: -5px;
+    min-width: 175px;
+}
+
+.submenu {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.submenu a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.submenu a:hover {
+    background-color: #555;
+    color: #ff8800;
+}
+
+.vertical-menu {
+    background-color: #555;
+    float: left;
+    padding: 0px;
+    width: 175px;
+}
+
+.vertical-menu a {
+    background-color: #555;
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #555;
+    color: #ff8800;
+}
+
+.vertical-menu:hover .drop-down {
+    display: block;
+}
+
+.drop-down {
+    display: none;
+}
+
+.drop-down a {
+    background-color: #666;
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.drop-down a:hover {
+    background-color: #777;
+    color: #ff8800;
+}
+
+.column {
+    background-color: beige;
+    border: 1px solid #ccc;
+    flex: 1;
+    padding: 10px;
+    min-width: 300px;
+}
