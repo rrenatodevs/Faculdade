@@ -98,11 +98,12 @@ const MISSIONS = [
   }
 ];
 
+// Cores da roleta: [cor da fatia, cor do texto]
 const WHEEL_COLORS = [
-  ["#14304A", "#fff"],
-  ["#F2B705", "#14304A"],
-  ["#2A7F9E", "#fff"],
-  ["#1F8A4C", "#fff"]
+  ["#1B1B1B", "#8DD3F0"],
+  ["#8DD3F0", "#050505"],
+  ["#2C2C2C", "#F07167"],
+  ["#F07167", "#050505"]
 ];
 
 let currentTheme = null;
@@ -116,10 +117,8 @@ let dbState = {
   rows: []
 };
 
-// Verifica preferência de redução de movimento do usuário
-const prefersReducedMotion =
-  window.matchMedia("(prefers-color-scheme: no-preference)")?.matches &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Verifica se o usuário pediu para reduzir animações no sistema
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // Funções auxiliares
 const $ = (id) => document.getElementById(id);
@@ -130,8 +129,8 @@ function renderDatabaseView() {
   if (!container) return;
 
   if (!dbState.exists) {
-    const text = currentStep >= 5 
-      ? `A tabela ${currentTheme.tableName} foi removida.` 
+    const text = currentStep >= 5
+      ? `A tabela ${currentTheme.tableName} foi removida.`
       : "Nenhuma tabela criada ainda.";
     container.innerHTML = `<p class="n">${text}</p>`;
     return;
@@ -213,14 +212,14 @@ function drawWheel() {
     const y2 = 150 - 140 * Math.cos(endAngle);
 
     svgContent += `
-      <path d="M150 150L${x1} ${y1}A140 140 0 0 1 ${x2} ${y2}Z" fill="${WHEEL_COLORS[i][0]}" stroke="#fff" stroke-width="3"/>
+      <path d="M150 150L${x1} ${y1}A140 140 0 0 1 ${x2} ${y2}Z" fill="${WHEEL_COLORS[i][0]}" stroke="#050505" stroke-width="3"/>
       <text transform="rotate(${i * 90 + 45} 150 150)" x="150" y="68" text-anchor="middle" font-size="24" font-weight="800" fill="${WHEEL_COLORS[i][1]}">
         ${theme.name}
       </text>
     `;
   });
 
-  svgContent += `<circle cx="150" cy="150" r="14" fill="#fff" stroke="#14304A" stroke-width="4"/>`;
+  svgContent += `<circle cx="150" cy="150" r="14" fill="#050505" stroke="#8DD3F0" stroke-width="4"/>`;
   wheelElement.innerHTML = svgContent;
 }
 
@@ -258,7 +257,7 @@ function spinWheel() {
   const durationSec = prefersReducedMotion ? 2.2 : 4.2;
 
   wheel.style.transition = `transform ${durationSec}s cubic-bezier(.12,.7,.1,1)`;
-  void wheel.offsetWidth; // Força re-flow
+  void wheel.offsetWidth; // Força o navegador a registrar a posição inicial
   wheel.style.transform = `rotate(${currentRotation}deg)`;
 
   setTimeout(() => {
@@ -321,7 +320,7 @@ function handleCheck(missionIndex) {
   section.querySelectorAll("button").forEach((btn) => (btn.disabled = true));
   section.className = "m done";
 
-  // Atualiza estado do banco de dados baseado na missão
+  // Atualiza o estado do banco de dados de acordo com a missão
   switch (missionIndex) {
     case 0:
       dbState.exists = true;
@@ -345,7 +344,7 @@ function handleCheck(missionIndex) {
   currentStep = missionIndex + 1;
   renderDatabaseView();
 
-  // Transição para a próxima missão
+  // Libera a próxima missão
   const nextSection = $(`m${currentStep}`);
   if (nextSection) {
     nextSection.className = "m on";
@@ -368,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spinWheel();
   });
 
-  // Event Delegation para as missões
+  // Event delegation para os botões das missões
   $("missions")?.addEventListener("click", (e) => {
     const checkAttr = e.target.getAttribute("data-check");
     const hintAttr = e.target.getAttribute("data-hint");
