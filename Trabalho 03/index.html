@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prática DDL: complete o código</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js"></script>
+</head>
+<body>
+<main>
+<h1>Prática de DDL: complete o código</h1>
+<p class="lead">Gire a roleta para sortear um tema. Depois desça a página e complete os comandos que faltam. O banco de dados lá em cima muda a cada acerto.</p>
+
+<section class="draw" aria-live="polite">
+  <div class="wheelbox"><div class="ptr"></div><svg id="wheel" viewBox="0 0 300 300" role="img" aria-label="Roleta de temas"></svg></div>
+  <div class="slot" id="slot">Gire a roleta</div>
+  <button id="btnDraw">Girar a roleta</button>
+</section>
+
+<section id="game">
+  <aside class="db" aria-live="polite"><h2>Banco de dados agora</h2><div class="wrap" id="dbv"></div></aside>
+  <div id="missions"></div>
+  <div class="row" id="end" hidden><button id="again">Girar a roleta de novo</button></div>
+</section>
+</main>
+</body>
+</html>
